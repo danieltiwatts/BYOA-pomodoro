@@ -1,0 +1,158 @@
+:root {
+    --primary: #6C63FF;
+    --secondary: #FF6B6B;
+    --background: #F8F9FD;
+    --surface: #FFFFFF;
+    --text: #2D3436;
+    --text-secondary: #636E72;
+    --success: #00B894;
+    --shadow: rgba(149, 157, 165, 0.2);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.container {
+    text-align: center;
+    background-color: var(--surface);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+.timer {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    color: var(--primary);
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.controls button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+.controls button.reset {
+    background-color: var(--secondary);
+}
+
+.controls button.reset:hover {
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+}
+
+.mode-toggle {
+    margin: 1.5rem 0;
+}
+
+.mode-toggle button {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--background);
+    color: var(--text);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.mode-toggle button:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.mode-toggle button.work-mode {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.mode-toggle button.work-mode:hover {
+    background-color: var(--success);
+    color: white;
+}
+
+.mode-toggle button.rest-mode {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.mode-toggle button.rest-mode:hover {
+    background-color: var(--secondary);
+    color: white;
+}
+
+#bouncing-image {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: pulse 6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(var(--x), var(--y)) scale(1);
+    }
+    50% {
+        transform: translate(var(--x), var(--y)) scale(3);
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(1);
+    }
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    padding: 2.5rem;
+} 
